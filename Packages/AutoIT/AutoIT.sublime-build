@@ -1,0 +1,19 @@
+{
+	"cmd": ["$packages/AutoIT/Run/Run.exe","$file" , "/run"],
+	"selector": "source.autoit",
+
+	"variants": [
+
+        { "cmd": ["$packages/AutoIT/Run/Run.exe","$file"],
+          "name": "Build Script"
+        },
+
+        { "cmd": ["$packages/AutoIT/Run/Run.exe","$file", "/ShowGui"],
+          "name": "Compile Script"
+        },
+
+        { "cmd": ["$packages/AutoIT/Run/Run.exe","$file" , "/run"],
+          "name": "Run Script"
+        }
+    ]
+}
