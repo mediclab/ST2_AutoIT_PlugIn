@@ -12,23 +12,19 @@
 	<array>		
 		<dict>
 			<key>match</key>
-			<string>#(?i:include|include-once|notrayicon|requireadmin)\s*(&alt;.*?&gt;)?</string>
-			<key>name</key>
-			<string>preprocessor.autoit</string>
+			<string>(?i)(#include|#include-once|#noautoit3execute|#notrayicon|#onautoitstartregister|#requireadmin)\s*(&lt;.*?&gt;)?\s*$</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>first.preprocessor.autoit</string>
+					<string>preprocessor.autoit</string>
 				</dict>
-				<!-- Неработающий участок |||||||||||||||||||||||||-->
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>string.preprocessor.autoit</string>
+					<string>preprocessor.quote.autoit</string>
 				</dict>
-				<!-- Неработающий участок ^^^^^^^^^^^^^^^^^^^^^^^ -->
 			</dict>
 		</dict>
 		<dict>
@@ -65,13 +61,45 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>#\b(?i:autoit3wrapper_au3check_parameters|autoit3wrapper_au3check_stop_onwarning|autoit3wrapper_change2cui|autoit3wrapper_compression|autoit3wrapper_cvswrapper_parameters|autoit3wrapper_icon|autoit3wrapper_outfile|autoit3wrapper_outfile_type|autoit3wrapper_plugin_funcs|autoit3wrapper_res_comment|autoit3wrapper_res_description|autoit3wrapper_res_field|autoit3wrapper_res_file_add|autoit3wrapper_res_fileversion|autoit3wrapper_res_fileversion_autoincrement|autoit3wrapper_res_icon_add|autoit3wrapper_res_language|autoit3wrapper_res_legalcopyright|autoit3wrapper_res_requestedexecutionlevel|autoit3wrapper_res_savesource|autoit3wrapper_run_after|autoit3wrapper_run_au3check|autoit3wrapper_run_before|autoit3wrapper_run_cvswrapper|autoit3wrapper_run_debug_mode|autoit3wrapper_run_obfuscator|autoit3wrapper_run_tidy|autoit3wrapper_tidy_stop_onerror|autoit3wrapper_useansi|autoit3wrapper_useupx|autoit3wrapper_usex64|autoit3wrapper_version|endregion|forceref|obfuscator_ignore_funcs|obfuscator_ignore_variables|obfuscator_parameters|region|tidy_parameters )\b</string>
+			<string>#\b(?i:autoit3wrapper_add_constants|autoit3wrapper_au3check_parameters|autoit3wrapper_au3check_stop_onwarning|autoit3wrapper_autoit3dir|autoit3wrapper_aut2exe|autoit3wrapper_autoit3|autoit3wrapper_change2cui|autoit3wrapper_compile_both|autoit3wrapper_compression|autoit3wrapper_cvswrapper_parameters|autoit3wrapper_icon|autoit3wrapper_outfile|autoit3wrapper_outfile_type|autoit3wrapper_outfile_x64|autoit3wrapper_plugin_funcs|autoit3wrapper_res_comment|autoit3wrapper_res_description|autoit3wrapper_res_field|autoit3wrapper_res_file_add|autoit3wrapper_res_fileversion|autoit3wrapper_res_fileversion_autoincrement|autoit3wrapper_res_icon_add|autoit3wrapper_res_language|autoit3wrapper_res_legalcopyright|autoit3wrapper_res_productversion|autoit3wrapper_res_requestedexecutionlevel|autoit3wrapper_res_compatibility|autoit3wrapper_res_savesource|autoit3wrapper_run_after|autoit3wrapper_run_au3check|autoit3wrapper_run_before|autoit3wrapper_run_cvswrapper|autoit3wrapper_run_debug_mode|autoit3wrapper_run_obfuscator|autoit3wrapper_run_scite_minimized|autoit3wrapper_run_scite_outputpane_minimized|autoit3wrapper_run_tidy|autoit3wrapper_showgui|autoit3wrapper_tidy_stop_onerror|autoit3wrapper_upx_parameters|autoit3wrapper_useansi|autoit3wrapper_useupx|autoit3wrapper_usex64|autoit3wrapper_version|obfuscator_ignore_funcs|obfuscator_ignore_variables|obfuscator_off|obfuscator_on|obfuscator_parameters|tidy_parameters)\b.*?$</string>
 			<key>name</key>
 			<string>preprocessor.special.autoit</string>
 		</dict>
 		<dict>
+			<key>match</key>
+			<string>(?i)(#)(end)?(region)\s*(.*?)(;.*?)?$</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>preprocessor.special.autoit</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>preprocessor.special.autoit</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>preprocessor.special.autoit</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>preprocessor.special.autoit</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>line.comment.autoit</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
 			<key>begin</key>
-			<string>(#cs|#comments-start)</string>
+			<string>(?i)(#cs|#comments-start)</string>
 			<key>captures</key>
 			<dict>
 				<key>0</key>
@@ -81,7 +109,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(#ce|#comments-end).*$\n?</string>
+			<string>(?i)(#ce|#comments-end).*$\n?</string>
 			<key>name</key>
 			<string>block.comment.autoit</string>
 		</dict>
@@ -149,6 +177,13 @@
 			</dict>
 			<key>name</key>
 			<string>string.quoted.single.autoit</string>
+		</dict>
+		
+		<dict>
+			<key>match</key>
+			<string>0x[0-9A-F]{1,6}</string>
+			<key>name</key>
+			<string>constant.number.autoit</string>
 		</dict>
 		<dict>
 			<key>match</key>

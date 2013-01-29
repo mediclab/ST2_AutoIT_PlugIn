@@ -1,18 +1,18 @@
 {
-	"cmd": ["$packages/AutoIT/Run/Run.exe","$file" , "/run"],
+	"cmd": ["$packages/AutoIT/Run/Run.exe"],
 	"selector": "source.autoit",
 
 	"variants": [
 
-        { "cmd": ["$packages/AutoIT/Run/Run.exe","$file"],
+        { "cmd": ["$packages/AutoIT/Run/Run.exe","/build"],
           "name": "Build Script"
         },
 
-        { "cmd": ["$packages/AutoIT/Run/Run.exe","$file", "/ShowGui"],
+        { "cmd": ["$packages/AutoIT/Run/Run.exe", "/ShowGui"],
           "name": "Compile Script"
         },
 
-        { "cmd": ["$packages/AutoIT/Run/Run.exe","$file" , "/run"],
+        { "cmd": ["$packages/AutoIT/Run/Run.exe"],
           "name": "Run Script"
         }
     ]
