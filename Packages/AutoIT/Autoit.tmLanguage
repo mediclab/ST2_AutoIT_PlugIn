@@ -6,6 +6,10 @@
 	<array>
 		<string>au3</string>
 	</array>
+	<key>foldingStartMarker</key>
+	<string>\{\s*$</string>
+	<key>foldingStopMarker</key>
+	<string>^\s*\}</string>
 	<key>name</key>
 	<string>AutoIt Script</string>
 	<key>patterns</key>
@@ -210,6 +214,7 @@
 			<string>varible.autoit</string>
 		</dict>
 	</array>
+	
 	<key>scopeName</key>
 	<string>source.autoit</string>
 	<key>uuid</key>
