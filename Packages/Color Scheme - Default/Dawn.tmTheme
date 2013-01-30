@@ -472,7 +472,6 @@
 				<string>#3DA3EF</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Preprocessor</string>
@@ -482,18 +481,6 @@
 			<dict>
 				<key>foreground</key>
 				<string>#F000FF</string>
-			</dict>
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>Preprocessor String</string>
-			<key>scope</key>
-			<string>string.preprocessor.autoit</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#C6D6E3</string>
 			</dict>
 		</dict>
 		<dict>
@@ -579,7 +566,6 @@
 				<string>#0000FF</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key>
 			<string>Keywords</string>
@@ -604,6 +590,19 @@
 				<string>italic</string>
 				<key>foreground</key>
 				<string>#A00FF0</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Keywords</string>
+			<key>scope</key>
+			<string>send.keys.autoit</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#FF8800</string>
 			</dict>
 		</dict>
 <!-- AutoIT -->
